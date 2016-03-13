@@ -1,0 +1,38 @@
+<!-- extend base layout -->
+{% extends "main.html" %}
+
+{% block events %}
+<div class="col-md-12">
+
+    <div class="col-md-6">
+    <p class="lead">{{category.name}}</p>
+    </div>
+    <div class="col-md-6">
+    <a class= "lead pull-right"href='{{url_for('addEvent', category_id = category.id) }}'>Add new Restaurant</a>
+    <br>
+    </div>
+    {% for ev in events %}
+    <div class="col-md-6">
+            <div class="thumbnail">
+                <img class="img-responsive" src="{{ev.image}}" alt="">
+                <div class="caption-full">
+                    <h4 class="pull-right">{{ev.price}}</h4>
+                    <h4><a href="#">{{ev.name}}</a>
+                    </h4>
+                    <p>{{ev.description}}</p>
+                </div>
+                <div class="ratings">
+                    
+                    {%if user_id == ev.user_id%}
+                    <a href='{{url_for('editEvent', category_id = ev.category_id, event_id = ev.id) }}'>Edit</a>
+                    <br>
+                    <a href='{{url_for('deleteEvent', category_id = ev.category_id, event_id = ev.id) }}'>Delete</a>
+                    {%endif%}
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+ 
+{% endblock %}

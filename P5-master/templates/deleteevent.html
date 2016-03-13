@@ -1,0 +1,16 @@
+
+<!-- extend base layout -->
+{% extends "main.html" %}
+
+{% block events %}
+<div class="col-md-12">
+<p class="lead"> Are you sure you want to delete {{event.name}}? </p>
+<form action="{{ url_for('deleteEvent',category_id = event.category_id, event_id =event.id)}}" method = 'post'>
+
+<input type='submit', value = 'Delete'>
+</form>
+
+<a href = '{{url_for('showEvents', category_id = event.category_id)}}'> Cancel </a>
+</div>
+{% endblock %}
+

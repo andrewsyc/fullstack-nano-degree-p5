@@ -1,0 +1,20 @@
+{
+  "web": {
+    "client_id": "899747179287-0k1v43u9b6mag9784gn0ecurgmi14021.apps.googleusercontent.com",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_email": "",
+    "client_x509_cert_url": "",
+    "client_secret": "K0Z0EsCdvbw5pqzCnz4MjS9J",
+    "redirect_uris": [
+      "https://www.example.com/oauth2callback",
+      "http://localhost:8000/oauth2callback",
+      ""
+    ],
+    "javascript_origins": [
+      "https://www.example.com",
+      "http://localhost:8000"
+    ]
+  }
+}

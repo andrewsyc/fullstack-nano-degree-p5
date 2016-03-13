@@ -1,0 +1,27 @@
+<!-- extend base layout -->
+{% extends "main.html" %}
+
+{% block events %}
+<div class="col-md-12">
+	<form action= "{{url_for('editEvent', category_id = event.category_id, event_id=event.id)}}" enctype="multipart/form-data" method = 'POST'>
+
+	<p>Name:</p>
+	<input type = 'text' size='30' name = 'name' placeholder = '{{event.name}}'>
+	<br><br>
+	<p>Price:</p>
+	<input type = 'text' size='30' name = 'price' placeholder = '{{event.price}}'>
+	<br><br>
+	<p>Description:</p>
+	<input type = 'text' size='30' name = 'description' placeholder = '{{event.description}}'>
+	<br><br>
+	<p>Online Image URL:</p>
+	<input type = 'text' size='30' name = 'url_image'>
+	<p>or</p>
+	<p>Upload local image</p>
+	<input type='file' name='local_image' accept="image/*">
+	<br><br>
+	<input type='submit' value='Edit'>
+
+	<a href= '{{url_for('showEvents', category_id= category_id)}}'>Cancel</a>
+</div>
+{% endblock %}
